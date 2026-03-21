@@ -115,6 +115,7 @@ dynamically link them at runtime.
 ## Requirements
 * [PyTorch](https://pytorch.org/) must be installed _before_ installing DeepSpeed.
 * For full feature support we recommend a version of PyTorch that is >= 1.9 and ideally the latest PyTorch stable release.
+* **ZeRO Stage 3** parameter-offload hooks rely on `torch.autograd.Function.setup_context` and require **PyTorch >= 2.0** (including for `torch.func` compatibility on those code paths).
 * A CUDA or ROCm compiler such as [nvcc](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#introduction) or [hipcc](https://github.com/ROCm-Developer-Tools/HIPCC) used to compile C++/CUDA/HIP extensions.
 * Specific GPUs we develop and test against are listed below, this doesn't mean your GPU will not work if it doesn't fall into this category it's just DeepSpeed is most well tested on the following:
   * NVIDIA: Pascal, Volta, Ampere, and Hopper architectures
